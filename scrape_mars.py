@@ -27,8 +27,9 @@ def scrape():
     soup = BeautifulSoup(html, 'html.parser')
 
     # Create a variable to store the scraped article title and paragraph description
-    news_title = soup.find_all('div', class_='content_title')[1].text
-    news_p = soup.find_all('div', class_='article_teaser_body')[0].text
+    header = soup.find('div', class_='list_text')
+    news_title = header.find('div', class_='content_title').text
+    news_p = header.find('div', class_='article_teaser_body').text
 
     # Retrieve page with the browser module
     browser.visit(img_url)
@@ -59,7 +60,7 @@ def scrape():
     mars_df.set_index('Description', inplace=True)
 
     # Use pandas to convert to a HTML table
-    mars_facts = mars_df.to_html('table.html')
+    mars_facts = mars_df.to_html()
 
     # Retrieve page with the browser module
     browser.visit(usgs_url)
@@ -92,7 +93,7 @@ def scrape():
         'news_p': news_p,
         'featured_image_url': featured_image_url,
         'mars_facts': mars_facts,
-        'hemisphere_image_urls': hemisphere_image_url
+        'hemisphere_image_url': hemisphere_image_url
     }
 
     return mars_data

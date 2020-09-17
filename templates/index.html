@@ -35,26 +35,32 @@
             <hr>
             <img src={{mars_data.featured_image_url}} height=auto width=750px>
         </div>
+
+        <div class="col-md-6">
+                    <h3><b>Facts about Mars</b></h3>
+                    <hr>
+                    <table border = "1" class="striped" style="width:100%">{{mars_data.mars_facts | safe}}</table>
+        </div>
     </div>
 
-    <!-- <div class="col-md-4">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-3 col-md-6">
-                    <a><img src="mars" width="100%"  alt="temperature"></a> 
+    <div class="row">
+        <div class="page-header">
+            <h1 class="text-center"><b>Mars Hemispheres</b></h1>
+                {% for hemisphere in mars_data.hemisphere_image_url %}
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <img src="{{hemisphere.img_url}}" height=auto width="100%">
+                        <h3 class="text-center"><b>{{hemisphere.title}}</b></h3> 
+                    </div>
                 </div>
-                <div class="col-md-3 col-md-6">
-                    <a href="humidity.html"><img src="Resources/assets/images/Fig2.png" width="100%" alt="humidity"></a>
-                </div>
-                <div class="col-md-3 col-md-6">
-                    <a href="cloudiness.html"><img src="Resources/assets/images/Fig3.png" width="100%"  alt="cloudiness"></a>
-                </div>
-                <div class="col-md-3 col-md-6">
-                    <a href="windspeed.html"><img src="Resources/assets/images/Fig4.png"width="100%"  alt="wind speed"></a>
-                </div>
+                {% endfor %}
             </div>
         </div>
-    </div> -->
+    </div>
+
+
+
+
 </body>
 
 </html>
