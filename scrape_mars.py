@@ -46,10 +46,53 @@ def scrape():
     image_url = soup.find('figure', class_='lede').a['href']
     featured_image_url = f'https://www.jpl.nasa.gov{image_url}'
 
+    # Use pandas to scrape the table containing Mars facts
+    facts_tbl = pd.read_html(fact_url)
+
+    # Create a data frame from the first table
+    mars_df = facts_tbl[0]
+
+    # Add Column names
+    mars_df.columns=['Description','Mars']
+
+    # Set the index to the description
+    mars_df.set_index('Description', inplace=True)
+
+    # Use pandas to convert to a HTML table
+    mars_facts = mars_df.to_html('table.html')
+
+    # Retrieve page with the browser module
+    browser.visit(usgs_url)
+
+    html = browser.html
+
+    soup = BeautifulSoup(html, 'html.parser')
+
+    hemisphere_image_url = []
+
+    urls = soup.find('div', class_='collapsible results')
+    hemispheres = urls.find_all('div', class_='item')
+
+    for hemisphere in hemispheres:
+        title =  hemisphere.find('h3').text
+        title = title.replace(' Enhanced', '')
+        
+        link = 'https://astrogeology.usgs.gov/' + hemisphere.find('a')['href']
+        
+        browser.visit(link)
+        html = browser.html
+        img_soup = BeautifulSoup(html, 'html.parser')
+        
+        img_url = img_soup.find('div', class_='downloads').a['href']
+
+        hemisphere_image_url.append({'title': title, 'img_url': img_url})
+
     mars_data = {
         'news_title': news_title,
         'news_p': news_p,
-        'featured_image_url': featured_image_url
+        'featured_image_url': featured_image_url,
+        'mars_facts': mars_facts,
+        'hemisphere_image_urls': hemisphere_image_url
     }
 
     return mars_data
