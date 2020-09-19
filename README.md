@@ -1,5 +1,5 @@
 # web-scraping-challenge
-![Mission_to_mars](https://github.com/dborowski16/web-design-challenge/blob/master/Resources/assets/images/Fig1.png)
+![Mission_to_mars](https://github.com/dborowski16/web-scraping-challenge/blob/master/mission_to_mars.png)
 
 NASA Mars News
 
