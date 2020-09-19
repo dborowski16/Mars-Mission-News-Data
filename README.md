@@ -52,6 +52,8 @@ Save both the image url string for the full resolution hemisphere image, and the
 
 Append the dictionary with the image url string and the hemisphere title to a list. This list will contain one dictionary for each hemisphere.
 
+![Mission_to_mars](https://github.com/dborowski16/web-scraping-challenge/blob/master/mission_to_mars.png)
+![Mission_to_mars](https://github.com/dborowski16/web-scraping-challenge/blob/master/mission_to_mars.png)
 
 # Example:
 hemisphere_image_urls = [
