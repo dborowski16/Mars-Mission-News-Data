@@ -1,4 +1,4 @@
-# web-scraping-challenge
+# Mission to Mars News and Data
 ![Mission_to_mars](https://github.com/dborowski16/web-scraping-challenge/blob/master/mission_to_mars.png)
 
 NASA Mars News
