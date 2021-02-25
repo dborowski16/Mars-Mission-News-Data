@@ -1,5 +1,5 @@
 # Mission to Mars News and Data
-![Mission_to_mars](https://github.com/dborowski16/web-scraping-challenge/blob/master/mission_to_mars.png)
+![Mission_to_mars](https://github.com/dborowski16/Mars-Mission-News-Data/blob/master/Images/mission_to_mars.png)
 
 NASA Mars News
 
