@@ -2,7 +2,7 @@
 
 With the Perseverance Rover touching down on the surface of Mars recently, there is a lot of interest in knowing the latest news and facts about the Red Planet.  With this repo, one can simply click a button to retreive the latest news article pertaining to Mars through a web scrape, and get facts about the planet in one place.
 
-![html gif] (https://github.com/dborowski16/Mars-Mission-News-Data/blob/master/templates/html%20gif.gif)
+![html gif](https://github.com/dborowski16/Mars-Mission-News-Data/blob/master/templates/html%20gif.gif)
 
 # Table of Contents
 
