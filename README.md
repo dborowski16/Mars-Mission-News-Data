@@ -26,12 +26,12 @@ Once the repo is downloaded to your local machine, all the user has to do is run
 Note:  The 'chromedriver.exe' file should be in the same folder as app.py to run, or the path to the file needs to be updated in the code
 
 # Files in this Repo
-Images (folder) - Contains screenshots from the first iteration of the repo
-ipynb_notebooks (folder) - Contains the jupyter notebook to develop the scraping code prior to writing it to a python script
-Templates (folder) - Contains the index.html file that will host the images, news, and data for the scrape
-scrape_mars.py - Code to scrape the websites for the latest information and store is to a data dictionary
-app.py - File that runs a flask app that will create a pymongo db to store the scraped data when calling the scrape_mars.py script.  It has a "/" route that will render the index.html template
-chromedriver.exe - Driver file that allows Python to scrape websites through Google Chrome utilizing the Splinter package
+* Images (folder) - Contains screenshots from the first iteration of the repo
+* ipynb_notebooks (folder) - Contains the jupyter notebook to develop the scraping code prior to writing it to a python script
+* Templates (folder) - Contains the index.html file that will host the images, news, and data for the scrape
+* scrape_mars.py - Code to scrape the websites for the latest information and store is to a data dictionary
+* app.py - File that runs a flask app that will create a pymongo db to store the scraped data when calling the scrape_mars.py script.  It has a "/" route that will render the index.html template
+* chromedriver.exe - Driver file that allows Python to scrape websites through Google Chrome utilizing the Splinter package
 
 # Web Scraping
 
