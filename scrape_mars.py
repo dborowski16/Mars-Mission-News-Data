@@ -29,6 +29,8 @@ def scrape():
     # Create a variable to store the scraped article title and paragraph description
     header = soup.find('div', class_='list_text')
     news_title = header.find('div', class_='content_title').text
+    news_ref = header.find('div', class_='content_title').a['href']
+    feat_url = f'https://mars.nasa.gov{news_ref}'
     news_p = header.find('div', class_='article_teaser_body').text
 
     # Commenting out the next block of code to add in new code for updated website 02282021
@@ -110,6 +112,7 @@ def scrape():
     mars_data = {
         'news_title': news_title,
         'news_p': news_p,
+        'feat_url': feat_url,
         'featured_image_url': featured_image_url,
         'mars_facts': mars_facts,
         'hemisphere_image_url': hemisphere_image_url
