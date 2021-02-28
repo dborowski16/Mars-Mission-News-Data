@@ -31,21 +31,40 @@ def scrape():
     news_title = header.find('div', class_='content_title').text
     news_p = header.find('div', class_='article_teaser_body').text
 
+    # Commenting out the next block of code to add in new code for updated website 02282021
+    # # Retrieve page with the browser module
+    # browser.visit(img_url)
+    #
+    # # Click the Full Image link
+    # browser.click_link_by_partial_text("FULL IMAGE")
+    #
+    # # Click the more info link
+    # browser.click_link_by_partial_text("more info")
+    #
+    # # Get browser info into beautiful soup
+    # html = browser.html
+    # soup = BeautifulSoup(html, 'html.parser')
+    #
+    # image_url = soup.find('figure', class_='lede').a['href']
+    # featured_image_url = f'https://www.jpl.nasa.gov{image_url}'
+
+    # New code for featured image from the NASA website
     # Retrieve page with the browser module
-    browser.visit(img_url)
-
-    # Click the Full Image link
-    browser.click_link_by_partial_text("FULL IMAGE")
-
-    # Click the more info link
-    browser.click_link_by_partial_text("more info")
+    img_url2 = "https://mars.nasa.gov/"
+    browser.visit(img_url2)
 
     # Get browser info into beautiful soup
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
+    image = soup.find('div', class_='window').a['href']
+    browser.visit(image)
+
+    html = browser.html
+    soup = BeautifulSoup(html, 'html.parser')
+
     image_url = soup.find('figure', class_='lede').a['href']
-    featured_image_url = f'https://www.jpl.nasa.gov{image_url}'
+    featured_image_url = f'https://mars.nasa.gov{image_url}'
 
     # Use pandas to scrape the table containing Mars facts
     facts_tbl = pd.read_html(fact_url)
