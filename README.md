@@ -34,10 +34,10 @@ chromedriver.exe - Driver file that allows Python to scrape websites through Goo
 # Web Scraping
 
 There are 4 different website url's that are scraped to produce the output template:
--Latest News Article - "https://mars.nasa.gov/news/"
--Featured Mars Image - "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
--Facts about Mars - "https://space-facts.com/mars/"
--Mars Hemispheres - "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
+>Latest News Article - "https://mars.nasa.gov/news/"
+>Featured Mars Image - "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
+>Facts about Mars - "https://space-facts.com/mars/"
+>Mars Hemispheres - "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 
 UPDATE 022521: When re-running the script on 02/25/2021, the link to the featured image on NASA's JPL website was no longer there, so code was updated to pull the Image of the Week from the mars.nasa.gov website instead
 
